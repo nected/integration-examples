@@ -1,34 +1,32 @@
 package com.nected.loan.example.configuration;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
 import lombok.Data;
 
-@Configuration
-@PropertySource("classpath:application.properties")
-@ConfigurationProperties(prefix = "nected")
+@Component
+@PropertySource("classpath:nected.properties")
 @Data
 public class NectedAppConfig {
-    
-    @Data
-    public class Rule {
-        private String scheme;
-        private String host;
-        private String path;
-        private String ruleId;
+    @Value("${nected.apiKey}")
+    private String apiKey;
 
-        public String getRuleUrl() {
-            return scheme + "://" + host + "/" + path + "/" + ruleId;
-        }
-    }
+    @Value("${nected.rule.scheme}")
+    private String scheme;
 
-    @Bean
-    @ConfigurationProperties(prefix = "nected.rule")
-    public Rule rule() {
-        return new Rule();
+    @Value("${nected.rule.host}")
+    private String host;
+
+    @Value("${nected.rule.path}")
+    private String path;
+
+    @Value("${nected.rule.ruleId}")
+    private String ruleId;
+
+    public String getRuleUrl() {
+        return scheme + "://" + host +"/"+ path +"/" +ruleId;
     }
 
 }
