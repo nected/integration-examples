@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "nected.rule.scheme",
+      "type": "java.lang.String",
+      "description": "A description for 'nected.rule.scheme'"
+    },
+    {
+      "name": "nected.rule.host",
+      "type": "java.lang.String",
+      "description": "A description for 'nected.rule.host'"
+    },
+    {
+      "name": "nected.rule.path",
+      "type": "java.lang.String",
+      "description": "A description for 'nected.rule.path'"
+    },
+    {
+      "name": "nected.rule.ruleId",
+      "type": "java.lang.String",
+      "description": "A description for 'nected.rule.fragment'"
+    }
+  ]
+}
