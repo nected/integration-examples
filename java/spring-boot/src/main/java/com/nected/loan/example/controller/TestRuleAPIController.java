@@ -17,7 +17,7 @@ public class TestRuleAPIController {
     @GetMapping("/test")
     public Map<String, Object> testRuleAPI() {
         try {
-            return testRuleAPIService.TestRuleAPI();
+            return testRuleAPIService.testRuleAPI();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
